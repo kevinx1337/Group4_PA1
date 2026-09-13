@@ -15,7 +15,7 @@ const char *unixEnvironment[] = {
 const int totalWindowsCmd = sizeof(windowsEnvironment) / sizeof(windowsEnvironment[0]);
 const int totalUnixCmd = sizeof(unixEnvironment) / sizeof(unixEnvironment[0]);
 
-int isSuppertedCommand(const char *command) {
+int isSupportedCommand(const char *command) {
     if (command == NULL || strlen(command) == 0) {
         return 0;
     }
