@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "myshell.h"
+#include "thread_worker.h"
 
 /* Group 4, CPSC 351-03, Programming Assignment 1 */
 
