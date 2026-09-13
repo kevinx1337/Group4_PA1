@@ -12,13 +12,13 @@
 
 //Everything the child thread needs, passed as pthread_create()'s single void * argument. No globals are used
 typedef struct {
-    ParsedCommand command;  /* private copy of the parsed, validated command */
-    int status;             /* written by the child, read by the parent */
+    ParsedCommand command;  //private copy of the parsed validated command 
+    int status;             
 } ThreadArgument;
 
 /*
- * parseCommand() split the user's input into argv. system() takes a single string.
- * Returns 0 on success or -1 if result would not fit in 'buffer'.
+ * parseCommand() splits input into argv. system() takes a single string.
+ * Returns 0 on success or -1 if result would not fit in buffer.
  */
 static int buildCommandLine(const ParsedCommand *command, char *buffer, size_t size)
 {
@@ -100,7 +100,7 @@ int executeCommandInThread(const ParsedCommand *command)
         return -1;
     }
 
-    /* SYNCHRONIZATION: pthread_join() blocks this parent thread until the
+    /* sychronozation: pthread_join() blocks this parent thread until the
        child terminates. Also reclaims the child's resources. */
     joinResult = pthread_join(threadId, NULL);
     if (joinResult != 0) {
