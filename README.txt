@@ -12,6 +12,8 @@ Group Members:
 
 2. Files Included
     - myShell.c
+    - myshell.h
+    - cmd_validation.c
     - README.txt
 
 3. How to Compile
