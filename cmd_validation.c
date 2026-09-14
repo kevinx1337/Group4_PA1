@@ -15,22 +15,28 @@ const char *unixEnvironment[] = {
 const int totalWindowsCmd = sizeof(windowsEnvironment) / sizeof(windowsEnvironment[0]);
 const int totalUnixCmd = sizeof(unixEnvironment) / sizeof(unixEnvironment[0]);
 
+/*
+ * Command validation is OS-specific and check is case-sensitive
+ */
 int isSupportedCommand(const char *command) {
     if (command == NULL || strlen(command) == 0) {
         return 0;
     }
 
+#ifdef _WIN32
     for (int i = 0; i < totalWindowsCmd; i++) {
         if (strcmp(command, windowsEnvironment[i]) == 0) {
             return 1;
         }
     }
 
-    for (int k = 0; k < totalUnixCmd; k++) {
-        if (strcmp(command, unixEnvironment[k]) == 0) {
+#else
+    for (int i = 0; i < totalUnixCmd; i++) {
+        if (strcmp(command, unixEnvironment[i]) == 0) {
             return 1;
         }
     }
+#endif
 
     return 0;
 }
