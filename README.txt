@@ -80,3 +80,10 @@ Verified:
 - Person 3: Command validation.
 - Person 4: Threading and synchronization.
 - Person 5: Testing, screenshots, and README.
+
+
+10. Screenshots / Evidence
+
+- Screenshot 1 — screenshots/01_testing.png:
+  Shows valid command execution, invalid-command handling, ping with arguments,
+  and quit/closing behavior.
